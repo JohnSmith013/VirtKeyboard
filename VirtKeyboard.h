@@ -31,26 +31,26 @@
     "$letters\n" \
     "#q #w #e #r #t #y #u #i #o #p\n" \
     "#a #s #d #f #g #h #j #k #l\n" \
-    "&SHIFT:Shift@caps%1.6 #z #x #c #v #b #n #m &BKSPACE:BkSpace%1.6\n" \
-    "&:?123@symbols1%1.6 #@ &SPACE%5.7 #. &ENTER:Enter%1.6\n" \
+    "&SHIFT:Shift@caps%1.624 #z #x #c #v #b #n #m &BKSPACE:BkSpace%1.625\n" \
+    "&:?123@symbols1%1.624 #@ &SPACE%5.9 #. &ENTER:Enter%1.625\n" \
     "\n" \
     "$caps\n" \
     "#Q #W #E #R #T #Y #U #I #O #P\n" \
     "#A #S #D #F #G #H #J #K #L\n" \
-    "&SHIFT:Shift@letters%1.6! #Z #X #C #V #B #N #M &BKSPACE:BkSpace%1.6\n" \
-    "&:?123@symbols2%1.6 #@ &SPACE%5.7 #. &ENTER:Enter%1.6\n" \
+    "&SHIFT:Shift@letters%1.624! #Z #X #C #V #B #N #M &BKSPACE:BkSpace%1.625\n" \
+    "&:?123@symbols2%1.624 #@ &SPACE%5.9 #. &ENTER:Enter%1.625\n" \
     "\n" \
     "$symbols1\n" \
     "#1 #2 #3 #4 #5 #6 #7 #8 #9 #0\n" \
     "#@ ## #$ #% #€ #& #* #- #+\n" \
-    "#( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp%1.05\n" \
-    "&:ABC@letters%1.6 #= #_ &SPACE%3.35 #, #. &ENTER:Enter%1.6\n" \
+    "#( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp\n" \
+    "&:ABC@letters%1.624 #= #_ &SPACE%3.46 #, #. &ENTER:Enter%1.625\n" \
     "\n" \
     "$symbols2\n" \
     "#1 #2 #3 #4 #5 #6 #7 #8 #9 #0\n" \
     "#@ ## #$ #% #€ #& #* #- #+\n" \
-    "#( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp%1.05\n" \
-    "&:ABC@caps%1.6 #= #_ &SPACE%3.35 #, #. &ENTER:Enter%1.6\n" \
+    "#( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp\n" \
+    "&:ABC@caps%1.624 #= #_ &SPACE%3.46 #, #. &ENTER:Enter%1.625\n" \
     "\n"
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -108,7 +108,8 @@ public:
     void loadLayout(const QString& layoutFilePath);
     void createLayout(QString layoutStr = "");
 
-    void setKeySize(const QSize& keySize) { _keySize = keySize; }
+    void setKeySize(QSize keySize) { _keySize = keySize; }
+    void setKeySize(int width, int height) { _keySize.setWidth(width); _keySize.setHeight(height); }
 
     void setImageShift(const QImage& imageShift)     { setImage(&_imageShift,   imageShift); }
     void setImageBkSpace(const QImage& imageBkSpace) { setImage(&_imageBkSpace, imageBkSpace); }
@@ -129,6 +130,7 @@ public Q_SLOTS:
 
 private:
     QSize _keySize = QSize(35, 35);
+    int _padding = 9;
 
     QImage* _imageShift = nullptr;
     QImage* _imageBkSpace = nullptr;
