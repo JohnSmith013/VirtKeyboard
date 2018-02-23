@@ -123,8 +123,12 @@ void VirtKeyboard::parsePage(QStringList page)
     pageWidget->setObjectName(header);
 
     QVBoxLayout* pageLayout = new QVBoxLayout();
-    pageLayout->setContentsMargins(6, 6, 6, 6);
+    pageLayout->setContentsMargins(_padding, _padding, _padding, _padding);
+    pageLayout->setSpacing(_padding);
     pageWidget->setLayout(pageLayout);
+
+    QSpacerItem* verticalSpacer1 = new QSpacerItem(_padding, _padding, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    pageLayout->addItem(verticalSpacer1);
 
     for (const QString& line : page)
     {
@@ -133,6 +137,9 @@ void VirtKeyboard::parsePage(QStringList page)
 
         this->parseLine(line, lineLayout);
     }
+
+    QSpacerItem* verticalSpacer2 = new QSpacerItem(_padding, _padding, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    pageLayout->addItem(verticalSpacer2);
 
     _stackedWidget->addWidget(pageWidget);
 }
@@ -292,8 +299,7 @@ void VirtKeyboard::createKey(const VirtKeyData& data, QHBoxLayout* lineLayout)
     if (newWidget == nullptr) return;
 
     QSize size(_keySize.width() * data.widthFactor, _keySize.height());
-    newWidget->setMinimumSize(size);
-    newWidget->setMaximumSize(size);
+    newWidget->setFixedSize(size);
 
     lineLayout->addWidget(newWidget);
 }
