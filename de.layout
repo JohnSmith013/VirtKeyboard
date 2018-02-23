@@ -2,22 +2,22 @@ $letters
 #q #w #e #r #t #y #u #i #o #p #ü
 #a #s #d #f #g #h #j #k #l #ö #ä
 &SHIFT:Shift@caps%1.6 #z #x #c #v #b #n #m #ß &BKSPACE:BkSpace%1.6
-&:?123@symbols1%1.6 #@ &SPACE%6.88 #. &ENTER:Enter%1.6
+&:?123@symbols1%1.6 #@ &SPACE%7.15 #. &ENTER:Enter%1.6
 
 $caps
 #Q #W #E #R #T #Y #U #I #O #P #Ü
 #A #S #D #F #G #H #J #K #L #Ö #Ä 
-&SHIFT:Shift@letters%1.6! #Z #X #C #V #B #N #M #ẞ &BKSPACE:BkSpace%1.6
-&:?123@symbols2%1.6 #@ &SPACE%6.88 #. &ENTER:Enter%1.6
+&SHIFT:Shift@letters%1.6! #Z #X #C #V #B #N #M #ß &BKSPACE:BkSpace%1.6
+&:?123@symbols2%1.6 #@ &SPACE%7.15 #. &ENTER:Enter%1.6
 
 $symbols1
 #1 #2 #3 #4 #5 #6 #7 #8 #9 #0
 #@ ## #$ #% #€ #& #* #- #+
-~%0.4 #( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp%1.6
-&:ABC@letters%1.6 #= #_ &SPACE%4.52 #, #. &ENTER:Enter%1.6
+#( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp
+&:ABC@letters%1.6 #= #_ &SPACE%4.7 #, #. &ENTER:Enter%1.6
 
 $symbols2
 #1 #2 #3 #4 #5 #6 #7 #8 #9 #0
 #@ ## #$ #% #€ #& #* #- #+
-~%0.4 #( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp%1.6
-&:ABC@caps%1.6 #= #_ &SPACE%4.52 #, #. &ENTER:Enter%1.6
+#( #) #! #\" #' #: #; #/ #? &BKSPACE:BkSp
+&:ABC@caps%1.6 #= #_ &SPACE%4.7 #, #. &ENTER:Enter%1.6
